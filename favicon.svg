@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#f2f1ed"/>
+  <!-- braided river channels -->
+  <g fill="none" stroke="#5c615e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 8 C20 20 12 28 20 40 C26 49 22 54 20 58"/>
+    <path d="M30 8 C24 20 34 28 26 40 C21 48 26 54 28 58" opacity="0.65"/>
+  </g>
+  <!-- alder bank -->
+  <path d="M40 26 l6 -12 l6 12 Z" fill="#47613e"/>
+  <path d="M48 32 l5 -10 l5 10 Z" fill="#47613e" opacity="0.8"/>
+  <!-- salmon -->
+  <g fill="none" stroke="#c96a4a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M38 46 C42 42 50 42 54 46 C50 50 42 50 38 46 Z"/>
+    <path d="M38 46 l-5 -4 M38 46 l-5 4"/>
+  </g>
+</svg>

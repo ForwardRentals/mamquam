@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Mamquam — A Field Guide to Squamish&rsquo;s Working River Valley, BC</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A field guide to the Mamquam — the river, the falls, and the gravel road that unlocks Squamish's east-side alpine. Dike walks, salmon runs, swimming holes, water sports where the river meets the estuary, and the road rules for Mamquam FSR.">
+<link rel="canonical" href="https://mamquam.com/">
+<meta property="og:title" content="The Mamquam — A Field Guide to Squamish&rsquo;s Working River Valley, BC">
+<meta property="og:description" content="The river, the falls, and the gravel road that unlocks the east-side alpine. A mile-by-mile gazetteer of Squamish's working valley.">
+<meta property="og:url" content="https://mamquam.com/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f2f1ed;          /* river-stone tinted paper */
+    --paper-raise: #faf9f6;
+    --paper-sink: #e9e7e1;
+    --ink: #1d1b18;
+    --ink-soft: #3a3733;
+    --ink-mute: #77726a;
+    --rule: #d8d5cd;
+    --rule-strong: #bcb8ae;
+    --stone: #5c615e;          /* river-stone grey */
+    --stone-deep: #41464419;
+    --alder: #47613e;          /* alder green */
+    --alder-deep: #35492e;
+    --salmon: #c96a4a;         /* salmon accent */
+    --salmon-soft: #c96a4a1a;
+    --water: #7d8f93;
+    --water-pale: #aebcbe;
+    --gravel: #c9c3b6;
+    --snowline: #f6f5f2;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-size: 17px; line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--alder); color: var(--paper); }
+
+  a { color: inherit; text-decoration: none; }
+  .ln { border-bottom: 1px solid var(--rule-strong); transition: border-color .2s, color .2s; }
+  .ln:hover { border-bottom-color: var(--salmon); color: var(--salmon); }
+
+  h1, h2, h3 {
+    font-family: "Fraunces", "Georgia", serif;
+    font-weight: 380;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+  h1 { font-size: clamp(2.9rem, 7vw, 5.2rem); }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
+  h3 { font-size: 1.25rem; font-weight: 450; line-height: 1.3; }
+  p { margin: 0 0 1.05rem; color: var(--ink-soft); font-size: 1.03rem; }
+
+  .shell { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+  .col { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-mute);
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.1rem;
+  }
+  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+  .eyebrow .tag { color: var(--salmon); }
+
+  /* ---------- NAV ---------- */
+  header.masthead {
+    position: sticky; top: 0; z-index: 60;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  header.masthead .bar {
+    max-width: 1120px; margin: 0 auto;
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+  }
+  .wordmark { font-family: "Fraunces", serif; font-size: 1.06rem; font-weight: 450; letter-spacing: -0.01em; }
+  .wordmark em { font-style: italic; color: var(--alder); }
+  .wordmark small {
+    display: block; font-family: "Inter", sans-serif; font-weight: 500;
+    font-size: 0.58rem; letter-spacing: 0.26em; text-transform: uppercase;
+    color: var(--ink-mute); margin-top: 0.2rem;
+  }
+  header.masthead nav { display: flex; gap: 1.4rem; }
+  header.masthead nav a {
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 500; color: var(--ink-soft);
+  }
+  header.masthead nav a:hover { color: var(--salmon); }
+  @media (max-width: 800px) { header.masthead nav { display: none; } }
+
+  /* ---------- HERO ---------- */
+  .hero { border-bottom: 1px solid var(--rule); background: var(--paper-sink); }
+  .hero svg { display: block; width: 100%; height: auto; }
+
+  .titleplate { padding: 3.4rem 0 0; text-align: left; }
+  .vol-line {
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-mute); margin-bottom: 1.4rem;
+  }
+  .vol-line .rule { flex: 1; height: 1px; background: var(--rule); min-width: 40px; }
+  .vol-line .no { color: var(--salmon); }
+  .deck {
+    font-family: "Fraunces", serif; font-style: italic; font-weight: 340;
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem); line-height: 1.5;
+    color: var(--ink-soft); max-width: 46ch;
+    margin: 1.4rem 0 0;
+  }
+
+  /* ---------- COORDINATE RIBBON ---------- */
+  .ribbon {
+    margin: 2.6rem 0 0;
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    display: grid; grid-template-columns: repeat(5, auto);
+    justify-content: space-between; gap: 1rem 2rem;
+    padding: 0.95rem 0;
+  }
+  @media (max-width: 860px) { .ribbon { grid-template-columns: repeat(2, auto); } }
+  .ribbon .cell { font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); font-weight: 500; }
+  .ribbon .cell b { display: block; font-family: "Fraunces", serif; text-transform: none; letter-spacing: 0; font-size: 1.02rem; font-weight: 450; color: var(--ink); margin-top: 0.15rem; }
+
+  /* ---------- QUICK TAKE (asymmetric) ---------- */
+  .quicktake { padding: 6rem 0 6.5rem; }
+  .quicktake .split { display: grid; grid-template-columns: 1fr 2fr; gap: 3.5rem; align-items: start; }
+  @media (max-width: 880px) { .quicktake .split { grid-template-columns: 1fr; gap: 2rem; } }
+  .quicktake .lede {
+    font-family: "Fraunces", serif; font-weight: 360;
+    font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.45;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .statstack { border-left: 2px solid var(--alder); padding-left: 1.4rem; display: flex; flex-direction: column; gap: 1.1rem; }
+  .statstack .stat .k { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--ink-mute); }
+  .statstack .stat .v { font-family: "Fraunces", serif; font-size: 1.25rem; font-weight: 420; color: var(--ink); line-height: 1.25; }
+  .statstack .stat .v small { font-family: "Inter", sans-serif; font-size: 0.82rem; color: var(--ink-mute); font-weight: 400; }
+
+  /* ---------- ESSAY ---------- */
+  section.essay { padding: 0 0 6.5rem; }
+  .essay .dropcap::first-letter {
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+    font-size: 4.6rem; line-height: 0.78;
+    float: left; padding: 0.34rem 0.75rem 0 0;
+    color: var(--alder);
+  }
+  .pullquote {
+    margin: 3rem 0; padding: 2rem 0;
+    border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule-strong);
+    font-family: "Fraunces", serif; font-style: italic; font-weight: 340;
+    font-size: clamp(1.35rem, 2.6vw, 1.8rem); line-height: 1.4;
+    color: var(--ink); text-align: center;
+  }
+  .pullquote .cite { display: block; margin-top: 0.9rem; font-family: "Inter", sans-serif; font-style: normal; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; }
+
+  /* ---------- GAZETTEER ---------- */
+  section.gazetteer { padding: 6.5rem 0; background: var(--paper-raise); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .gz-head { max-width: 720px; margin: 0 auto 3rem; padding: 0 1.5rem; }
+  .gz-list { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+  .gz-entry {
+    display: grid; grid-template-columns: 96px 1fr; gap: 1.6rem;
+    padding: 1.9rem 0; border-top: 1px solid var(--rule);
+    position: relative;
+  }
+  .gz-entry:last-child { border-bottom: 1px solid var(--rule); }
+  @media (max-width: 620px) { .gz-entry { grid-template-columns: 64px 1fr; gap: 1rem; } }
+  .gz-km {
+    font-family: "Fraunces", serif; font-style: italic; font-weight: 380;
+    color: var(--salmon); font-size: 1.05rem; line-height: 1.3;
+  }
+  .gz-km small { display: block; font-family: "Inter", sans-serif; font-style: normal; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-top: 0.2rem; }
+  .gz-entry h3 { margin-bottom: 0.45rem; }
+  .gz-entry p { font-size: 0.99rem; margin-bottom: 0.6rem; }
+  .gz-entry p:last-child { margin-bottom: 0; }
+  .gz-side {
+    margin-top: 0.65rem; padding: 0.85rem 1.1rem;
+    background: var(--salmon-soft); border-left: 2px solid var(--salmon);
+    font-size: 0.92rem; color: var(--ink-soft);
+  }
+  .gz-side b { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--salmon); font-weight: 600; display: block; margin-bottom: 0.3rem; }
+
+  /* ---------- ROAD RULES ---------- */
+  section.road { padding: 6.5rem 0; }
+  .road-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3.5rem; max-width: 940px; margin: 2.4rem auto 0; padding: 0 1.5rem; }
+  @media (max-width: 760px) { .road-grid { grid-template-columns: 1fr; } }
+  .road-rule { display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; padding: 1.3rem 0; border-top: 1px solid var(--rule); align-items: baseline; }
+  .road-rule .n { font-family: "Fraunces", serif; font-style: italic; color: var(--stone); font-size: 1.5rem; font-weight: 340; }
+  .road-rule h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+  .road-rule p { font-size: 0.94rem; margin: 0; }
+
+  /* ---------- SEASONS ---------- */
+  section.seasons { padding: 6.5rem 0; background: var(--paper-sink); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .season-table { max-width: 860px; margin: 2.2rem auto 0; padding: 0 1.5rem; }
+  .season-row {
+    display: grid; grid-template-columns: 170px 1fr; gap: 1.5rem;
+    padding: 1.35rem 0; border-top: 1px solid var(--rule-strong);
+  }
+  .season-row:last-child { border-bottom: 1px solid var(--rule-strong); }
+  @media (max-width: 620px) { .season-row { grid-template-columns: 1fr; gap: 0.3rem; } }
+  .season-row .when { font-family: "Fraunces", serif; font-style: italic; font-weight: 380; font-size: 1.12rem; color: var(--alder); }
+  .season-row p { font-size: 0.97rem; margin: 0; }
+
+  /* ---------- HONEST NOTE ---------- */
+  section.honest { padding: 6.5rem 0; }
+  section.honest em { color: var(--ink); }
+
+  /* ---------- FAQ ---------- */
+  section.faq { padding: 6.5rem 0; border-top: 1px solid var(--rule); }
+  .faq-list { margin-top: 2.2rem; border-top: 1px solid var(--rule-strong); }
+  details.qa { border-bottom: 1px solid var(--rule); }
+  details.qa > summary {
+    list-style: none; cursor: pointer; padding: 1.4rem 0;
+    display: flex; gap: 1.1rem; align-items: baseline;
+    font-family: "Fraunces", serif; font-weight: 420; font-size: 1.18rem;
+    letter-spacing: -0.01em; color: var(--ink); line-height: 1.35;
+  }
+  details.qa > summary::-webkit-details-marker { display: none; }
+  details.qa > summary:hover { color: var(--alder); }
+  .qa .m { font-style: italic; color: var(--salmon); font-size: 0.9rem; flex: 0 0 2rem; }
+  .qa .tw { margin-left: auto; font-family: "Inter", sans-serif; font-weight: 300; font-size: 1.4rem; color: var(--ink-mute); line-height: 1; transition: transform .2s; flex: 0 0 auto; }
+  details.qa[open] > summary .tw { transform: rotate(45deg); }
+  .qa .ans { padding: 0 0 1.6rem 3.1rem; }
+  @media (max-width: 620px) { .qa .ans { padding-left: 0; } }
+  .qa .ans p { font-size: 0.99rem; margin-bottom: 0.85rem; }
+  .qa .ans p:last-child { margin: 0; }
+
+  /* ---------- FOOTER ---------- */
+  footer.colophon { padding: 4rem 0 2.5rem; border-top: 1px solid var(--rule-strong); background: var(--paper-raise); }
+  .foot-cols { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+  @media (max-width: 720px) { .foot-cols { grid-template-columns: 1fr; } }
+  .foot-cols h4 { font-family: "Inter", sans-serif; font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin: 0 0 0.85rem; }
+  .foot-cols p { font-size: 0.9rem; margin: 0; }
+  .foot-cols ul { list-style: none; margin: 0; padding: 0; }
+  .foot-cols li { margin-bottom: 0.45rem; font-size: 0.9rem; }
+  .foot-cols li a { color: var(--ink-soft); }
+  .foot-cols li a:hover { color: var(--salmon); }
+  .foot-base {
+    border-top: 1px solid var(--rule); padding-top: 1.2rem;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;
+    font-size: 0.74rem; color: var(--ink-mute);
+  }
+  .foot-base em { font-family: "Fraunces", serif; }
+</style>
+</head>
+<body>
+
+<!-- ===================== MASTHEAD ===================== -->
+<header class="masthead">
+  <div class="bar">
+    <a class="wordmark" href="#top">The <em>Mamquam</em><small>A Sea to Sky Trails field guide</small></a>
+    <nav>
+      <a href="#river">The River</a>
+      <a href="#gazetteer">Mile by Mile</a>
+      <a href="#road">The Road</a>
+      <a href="#seasons">Seasons</a>
+      <a href="#faq">Questions</a>
+      <a href="https://seatoskytrails.com/">All Guides</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO SCENE ===================== -->
+<div class="hero" id="top" aria-hidden="false">
+  <svg viewBox="0 0 1200 520" role="img" aria-label="Hand-drawn scene of the braided Mamquam River with gravel bars, alder banks, a waterfall inset, and a gravel road switchbacking toward the icefield">
+    <defs>
+      <linearGradient id="mq-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#dfe3e0"/>
+        <stop offset="0.65" stop-color="#ece9e2"/>
+        <stop offset="1" stop-color="#f2f1ed"/>
+      </linearGradient>
+      <clipPath id="mq-frame"><rect x="0" y="0" width="1200" height="520"/></clipPath>
+      <clipPath id="mq-inset"><rect x="72" y="64" width="200" height="252" rx="4"/></clipPath>
+    </defs>
+    <g clip-path="url(#mq-frame)">
+      <rect width="1200" height="520" fill="url(#mq-sky)"/>
+
+      <!-- Icefield & far ridge -->
+      <path d="M0 190 L140 158 L260 176 L400 118 L520 96 L640 128 L760 92 L900 140 L1050 108 L1200 150 L1200 520 L0 520 Z" fill="#8f948f"/>
+      <path d="M400 118 L520 96 L640 128 L600 142 L540 128 L470 146 L430 132 Z" fill="#f6f5f2"/>
+      <path d="M760 92 L900 140 L860 150 L810 128 L780 112 Z" fill="#f6f5f2"/>
+      <path d="M1050 108 L1200 150 L1140 158 L1080 132 Z" fill="#f6f5f2"/>
+      <!-- icefield ribs -->
+      <g fill="none" stroke="#767b76" stroke-width="1.4" stroke-linecap="round" opacity="0.5">
+        <path d="M520 100 L500 140"/><path d="M560 106 L575 138"/><path d="M780 100 L802 132"/>
+      </g>
+
+      <!-- Mid ridge with FSR switchbacks climbing away (right side) -->
+      <path d="M0 268 L180 232 L360 258 L560 214 L780 250 L960 200 L1200 244 L1200 520 L0 520 Z" fill="#6e7a68"/>
+      <g fill="none" stroke="#d3cec1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1200 300 L1050 288 L1140 266 L1010 252 L1090 234 L985 222"/>
+      </g>
+      <g fill="none" stroke="#5a664f" stroke-width="1.4" stroke-linecap="round" opacity="0.7">
+        <path d="M880 232 L880 214 M880 214 l-7 9 M880 214 l7 9"/>
+        <path d="M915 224 L915 208 M915 208 l-6 8 M915 208 l6 8"/>
+        <path d="M845 244 L845 228 M845 228 l-6 8 M845 228 l6 8"/>
+      </g>
+
+      <!-- Alder banks (near forest bands) -->
+      <path d="M0 330 L120 312 L300 336 L520 306 L760 338 L980 310 L1200 336 L1200 520 L0 520 Z" fill="#47613e"/>
+      <g fill="#35492e">
+        <path d="M60 330 l12 -26 l12 26 Z"/><path d="M96 334 l11 -22 l11 22 Z"/>
+        <path d="M330 338 l12 -26 l12 26 Z"/><path d="M368 342 l10 -20 l10 20 Z"/>
+        <path d="M620 330 l12 -26 l12 26 Z"/><path d="M656 334 l11 -22 l11 22 Z"/>
+        <path d="M900 328 l12 -26 l12 26 Z"/><path d="M938 332 l10 -20 l10 20 Z"/>
+        <path d="M1100 342 l12 -26 l12 26 Z"/>
+      </g>
+
+      <!-- Braided river: gravel flat then channels -->
+      <path d="M0 380 C200 366 420 388 640 374 C860 362 1040 384 1200 372 L1200 520 L0 520 Z" fill="#c9c3b6"/>
+      <!-- main channels (braids) -->
+      <g fill="#7d8f93">
+        <path d="M0 420 C160 404 280 436 430 420 C560 406 610 428 720 420 C880 408 1000 434 1200 416 L1200 442 C1010 458 880 434 740 444 C620 452 560 430 440 444 C300 458 150 430 0 448 Z"/>
+        <path d="M180 396 C300 388 380 402 470 394 C540 388 560 398 620 394 L618 406 C550 412 520 402 460 408 C370 416 290 402 178 410 Z" opacity="0.85"/>
+        <path d="M700 460 C840 450 960 470 1100 458 L1200 452 L1200 476 L1096 472 C960 484 840 464 698 476 Z" opacity="0.85"/>
+      </g>
+      <!-- gravel bar stones -->
+      <g fill="none" stroke="#a29b8b" stroke-width="1.4" stroke-linecap="round" opacity="0.8">
+        <ellipse cx="120" cy="390" rx="9" ry="3.5"/><ellipse cx="148" cy="386" rx="6" ry="2.5"/>
+        <ellipse cx="520" cy="382" rx="8" ry="3"/><ellipse cx="548" cy="378" rx="5" ry="2"/>
+        <ellipse cx="660" cy="452" rx="9" ry="3.5"/><ellipse cx="632" cy="458" rx="6" ry="2.5"/>
+        <ellipse cx="960" cy="446" rx="8" ry="3"/><ellipse cx="1010" cy="392" rx="6" ry="2.5"/>
+        <ellipse cx="300" cy="470" rx="9" ry="3.5"/><ellipse cx="336" cy="476" rx="6" ry="2.5"/>
+      </g>
+      <!-- current lines -->
+      <g fill="none" stroke="#aebcbe" stroke-width="1.6" stroke-linecap="round" opacity="0.9">
+        <path d="M60 430 q30 -6 60 0"/><path d="M300 432 q30 -6 60 0"/>
+        <path d="M760 428 q30 -6 60 0"/><path d="M1020 426 q30 -6 60 0"/>
+        <path d="M480 434 q24 -5 48 0"/>
+      </g>
+      <!-- salmon in the lower channel (accent) -->
+      <g stroke="#c96a4a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M846 466 C854 461 864 461 872 466 C864 471 854 471 846 466 Z"/>
+        <path d="M846 466 l-7 -5 M846 466 l-7 5"/>
+        <path d="M902 462 C909 458 917 458 924 462 C917 466 909 466 902 462 Z" opacity="0.7"/>
+        <path d="M902 462 l-6 -4 M902 462 l-6 4" opacity="0.7"/>
+      </g>
+      <!-- heron on a gravel bar -->
+      <g fill="none" stroke="#41464a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M406 452 C406 444 409 438 414 435 C418 432 420 428 421 424 L427 421 L421 426 C420 432 417 437 413 441 C410 446 409 449 409 452"/>
+        <path d="M407 452 L407 462 M411 452 L411 462"/>
+      </g>
+
+      <!-- Falls inset panel (field-journal style) -->
+      <rect x="66" y="58" width="212" height="264" rx="6" fill="#faf9f6" stroke="#bcb8ae" stroke-width="1.4"/>
+      <g clip-path="url(#mq-inset)">
+        <rect x="72" y="64" width="200" height="252" fill="#e6e4de"/>
+        <!-- canyon walls -->
+        <path d="M72 64 L128 64 L140 130 L120 208 L138 316 L72 316 Z" fill="#5c615e"/>
+        <path d="M272 64 L212 64 L200 138 L222 214 L206 316 L272 316 Z" fill="#6b706b"/>
+        <!-- falls -->
+        <path d="M150 64 L196 64 L190 122 L200 128 L186 210 L196 218 L188 316 L156 316 L166 220 L152 212 L164 130 L146 122 Z" fill="#f6f5f2"/>
+        <g fill="none" stroke="#aebcbe" stroke-width="1.4" stroke-linecap="round" opacity="0.9">
+          <path d="M164 78 L158 120"/><path d="M178 70 L174 118"/><path d="M172 140 L166 204"/><path d="M184 146 L180 206"/><path d="M170 232 L166 300"/><path d="M182 238 L180 302"/>
+        </g>
+        <!-- plunge pool -->
+        <path d="M120 300 C150 288 200 288 236 300 L236 316 L120 316 Z" fill="#7d8f93"/>
+        <path d="M138 300 q16 -5 32 0 M186 298 q16 -5 32 0" stroke="#aebcbe" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <!-- mist -->
+        <g fill="none" stroke="#f2f1ed" stroke-width="1.4" stroke-linecap="round" opacity="0.7">
+          <path d="M140 268 q10 -8 4 -18"/><path d="M206 262 q-10 -8 -4 -18"/>
+        </g>
+        <!-- ferns on the wall -->
+        <g fill="none" stroke="#47613e" stroke-width="1.4" stroke-linecap="round">
+          <path d="M116 150 q10 -3 14 -12 M116 150 q9 2 16 -3"/>
+          <path d="M226 176 q-10 -3 -14 -12 M226 176 q-9 2 -16 -3"/>
+        </g>
+      </g>
+      <text x="86" y="344" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#3a3733">fig. 1 — the falls, above the Powerhouse</text>
+
+      <!-- dike walk line + walker (left foreground) -->
+      <g fill="none" stroke="#41464a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 508 L1200 502" opacity="0.35"/>
+      </g>
+    </g>
+  </svg>
+</div>
+
+<!-- ===================== TITLE ===================== -->
+<div class="shell titleplate">
+  <div class="vol-line">
+    <span>Sea to Sky Trails</span><span class="rule"></span><span class="no">Vol. II, No. 06</span><span class="rule"></span><span>Squamish, BC</span>
+  </div>
+  <h1>The Mamquam</h1>
+  <p class="deck">Squamish&rsquo;s working river &mdash; the braided valley the town is built along, the small falls almost everyone drives past, and the gravel road that unlocks the whole east-side alpine.</p>
+
+  <div class="ribbon">
+    <div class="cell">Headwaters<b>Mamquam Icefield</b></div>
+    <div class="cell">Mouth<b>Squamish River, near the estuary</b></div>
+    <div class="cell">Approx. coordinates<b>49.7&deg; N, 123.1&deg; W</b></div>
+    <div class="cell">Character<b>Braided &middot; glacier-fed</b></div>
+    <div class="cell">Territory<b>Sḵwx̱wú7mesh Úxwumixw</b></div>
+  </div>
+</div>
+
+<!-- ===================== QUICK TAKE ===================== -->
+<section class="quicktake" id="river">
+  <div class="shell">
+    <div class="split">
+      <aside class="statstack" aria-label="Valley at a glance">
+        <div class="stat"><div class="k">The river</div><div class="v">Dikes, gravel bars, swim holes <small>&mdash; late summer</small></div></div>
+        <div class="stat"><div class="k">The falls</div><div class="v">Mamquam Falls <small>&mdash; short walk, Powerhouse area</small></div></div>
+        <div class="stat"><div class="k">The fish</div><div class="v">Chum &amp; coho <small>&mdash; fall runs, then eagles</small></div></div>
+        <div class="stat"><div class="k">The road up</div><div class="v">Mamquam FSR &rarr; Watersprite</div></div>
+        <div class="stat"><div class="k">The other road up</div><div class="v">Mamquam Rd &rarr; Elfin Lakes</div></div>
+        <div class="stat"><div class="k">Cell service</div><div class="v">None past the pavement</div></div>
+      </aside>
+      <div>
+        <div class="eyebrow"><span class="tag">Quick take</span></div>
+        <p class="lede">Every guidebook points you at the Chief. Fair enough. But the east side of Squamish runs on a different river &mdash; the Mamquam &mdash; and if you learn this one valley you&rsquo;ve learned the dike walks, the swimming holes, a genuinely good waterfall, the fall salmon runs, and the two gravel roads that carry you into the alpine at Watersprite Lake and Elfin Lakes. This page is the map of all of it, mile by mile, and an honest word about the water sports where the river finally meets the sound.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESSAY ===================== -->
+<section class="essay">
+  <div class="col">
+    <div class="eyebrow"><span class="tag">The working river</span></div>
+    <h2 style="margin-bottom:1.6rem;">A valley that earns its keep.</h2>
+    <p class="dropcap">The Mamquam starts as ice. It drains the Mamquam Icefield, drops through timber and canyon, and spreads into a broad, braided gravel run before it folds into the Squamish River near the estuary. The whole east side of town is built along it &mdash; behind dikes, which is your first clue that this is a river with moods. In late summer it turns generous: clear channels between gravel bars, swimming holes that locals keep quietly to themselves, alder shade on the banks. The rest of the year it does what glacier rivers do, which is whatever it wants.</p>
+    <p>One honest caution before anything else: river levels here can change with weather and with dam releases, not just the season. A gravel bar that was a picnic spot at noon can be a channel by dinner. Treat the current with respect, keep small kids close to the slack edges, and if the water starts rising, leave. That&rsquo;s the whole rule.</p>
+    <p>The name is older than the town. <em>Mamquam</em> comes from the Squamish language &mdash; the river runs through the territory of the Sḵwx̱wú7mesh Úxwumixw, and people fished and travelled this valley long before anyone diked it. We won&rsquo;t pretend to translate the word for you; renderings vary, and it&rsquo;s not ours to flatten into a caption. What&rsquo;s certain is that the river carried the name first and the road, the FSR, and half the addresses on the east side inherited it.</p>
+
+    <div class="pullquote">
+      &ldquo;Learn one valley properly and the whole east side opens up &mdash; the falls, the fish, and two roads into the alpine.&rdquo;
+      <span class="cite">Field notes, Mamquam valley</span>
+    </div>
+
+    <p>Then there&rsquo;s the falls. Mamquam Falls sits a short walk from the Powerhouse area &mdash; a genuinely good small waterfall that most visitors drive past on their way to bigger names. It drops into a tight, mossy canyon and it photographs like something twice its size. Exact trail details shift with washouts and reroutes, so check current conditions before you build a day around it &mdash; but it&rsquo;s a short outing, not an expedition. The canyon edges are steep and undercut: stay behind the fences. That is not a decorative suggestion.</p>
+    <p>And in the fall, the river fills with fish. Chum and coho run the lower Mamquam in autumn, and the eagle season follows the salmon the way it does everywhere on this coast. The dikes make it easy to watch respectfully &mdash; stay up on the gravel, keep dogs leashed and out of the channels, and let the spawners spawn. A salmon that made it back from the Pacific has earned the right not to be chased for a photo.</p>
+  </div>
+</section>
+
+<!-- ===================== GAZETTEER ===================== -->
+<section class="gazetteer" id="gazetteer">
+  <div class="gz-head">
+    <div class="eyebrow"><span class="tag">The gazetteer</span></div>
+    <h2>The valley, mile by mile.</h2>
+    <p style="margin-top:1rem;">Read it bottom-up like the river reads it &mdash; from salt water to ice. Distances are approximate; they&rsquo;re a reading aid, not a survey.</p>
+  </div>
+  <div class="gz-list">
+
+    <div class="gz-entry">
+      <div class="gz-km">Mile 0<small>Confluence</small></div>
+      <div>
+        <h3>Where the Mamquam meets the Squamish</h3>
+        <p>The river ends near the estuary, folding into the Squamish River just above where everything goes tidal. This is the one stretch of the valley that&rsquo;s genuinely better from the water: the estuary reach is calm, bird-loud, and framed by the Chief and Atwell. If you want to see where your river goes, rent a canoe from <a class="ln" href="https://squamishcanoerental.com/">Squamish Canoe Rental</a> &mdash; a canoe takes up to three paddlers, and you can <a class="ln" href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">book online</a>. For the full bird-and-tide briefing on that water, the <a class="ln" href="https://squamishestuary.ca/">Squamish Estuary guide</a> is the companion page to this one.</p>
+      </div>
+    </div>
+
+    <div class="gz-entry">
+      <div class="gz-km">Miles 1&ndash;3<small>The dikes</small></div>
+      <div>
+        <h3>Dike walks &amp; the town reach</h3>
+        <p>The east side&rsquo;s everyday commons: flat gravel dike-top walking with the river on one side and backyards on the other. Dog walkers at dawn, herons at the channel edges, and in October the best free wildlife show in town &mdash; chum and coho pushing upstream, eagles stacking up in the cottonwoods after. Watch from the dike, not the gravel beside a spawning channel.</p>
+        <div class="gz-side"><b>Fall note</b>Salmon first, eagles after. Bring binoculars, keep the dog leashed, and give anglers and fish both a wide berth.</div>
+      </div>
+    </div>
+
+    <div class="gz-entry">
+      <div class="gz-km">Miles 3&ndash;5<small>The bars</small></div>
+      <div>
+        <h3>Gravel bars &amp; swimming holes</h3>
+        <p>Late summer is when the braided middle reach earns its reputation: clear green channels, sun-warmed stones, mellow gravel-bar picnics. The holes move year to year as the river rearranges its bed, which is half the fun of scouting them. The serious caveat repeats here because it matters most here: levels can change with weather and dam releases. Cold, fast, glacier-fed water forgives very little &mdash; swim the slack edges, not the main current.</p>
+      </div>
+    </div>
+
+    <div class="gz-entry">
+      <div class="gz-km">Mile ~6<small>The falls</small></div>
+      <div>
+        <h3>Mamquam Falls, above the Powerhouse</h3>
+        <p>A short walk near the Powerhouse area delivers you to the valley&rsquo;s best-kept non-secret: a proper waterfall in a mossy slot canyon that most tourists never learn exists. Go in the soft light of morning or after rain when the moss glows. Exact trail details change with washouts &mdash; check current conditions locally &mdash; and the canyon edges are steep and undercut, so stay behind the fences, full stop.</p>
+        <div class="gz-side"><b>Trail bikes too</b>The lower valley threads through Squamish&rsquo;s mountain-bike network &mdash; several trail zones hang off the same access. Riders and walkers share gracefully here; keep doing that.</div>
+      </div>
+    </div>
+
+    <div class="gz-entry">
+      <div class="gz-km">The right fork<small>Mamquam Rd</small></div>
+      <div>
+        <h3>Mamquam Road &rarr; Diamond Head &amp; Elfin Lakes</h3>
+        <p>Mamquam Road climbs out of the valley toward the Diamond Head corner of Garibaldi Provincial Park &mdash; the trailhead for <a class="ln" href="https://elfin-lake.com/">Elfin Lakes</a>, the classic hut-and-meadows overnighter. Park rules, day passes, and winter access all shift season to season: check BC Parks before you commit a weekend. The road turns to gravel as it climbs; everything in the road-rules section below applies.</p>
+      </div>
+    </div>
+
+    <div class="gz-entry">
+      <div class="gz-km">The left fork<small>Mamquam FSR</small></div>
+      <div>
+        <h3>Mamquam FSR &rarr; Watersprite Lake</h3>
+        <p>The forest service road follows the river&rsquo;s upper valley and is the key that unlocks <a class="ln" href="https://waterspritelake.com/">Watersprite Lake</a> &mdash; the turquoise cirque that launched a thousand camera rolls. It&rsquo;s an active logging road: loaded trucks have the right of way, conditions change with every storm, and your phone is a paperweight past the pavement. Check current road conditions before you go, and tell someone your plan.</p>
+      </div>
+    </div>
+
+    <div class="gz-entry">
+      <div class="gz-km">The source<small>Icefield</small></div>
+      <div>
+        <h3>The Mamquam Icefield</h3>
+        <p>Everything above is fed by ice you&rsquo;ll mostly never stand on. The icefield is remote, glaciated, mountaineers&rsquo; country &mdash; for the rest of us it&rsquo;s the white line on the horizon that explains why the river runs cold and milky in July. It&rsquo;s enough to know your swimming hole started the day as a glacier.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== ROAD RULES ===================== -->
+<section class="road" id="road">
+  <div class="col" style="max-width:940px;">
+    <div class="eyebrow"><span class="tag">Gravel-road etiquette</span></div>
+    <h2>Six rules for the roads up.</h2>
+    <p style="margin-top:1rem; max-width:60ch;">Both forks &mdash; the FSR and the upper stretches of Mamquam Road &mdash; are gravel, industrial, and indifferent to your weekend plans. The rules are simple and non-negotiable.</p>
+  </div>
+  <div class="road-grid">
+    <div class="road-rule"><div class="n">i.</div><div><h3>Headlights on</h3><p>Always, day or night. Dust and shade swallow unlit vehicles. Be seen before you&rsquo;re met.</p></div></div>
+    <div class="road-rule"><div class="n">ii.</div><div><h3>Yield to loaded logging trucks</h3><p>They&rsquo;re working, heavy, and cannot stop for you. Pull right into a wide spot early and let them by. Every time.</p></div></div>
+    <div class="road-rule"><div class="n">iii.</div><div><h3>Check conditions before you go</h3><p>Washouts, cross-ditches, snow line, active hauling &mdash; the road you drove in June is not the road you&rsquo;ll drive in October.</p></div></div>
+    <div class="road-rule"><div class="n">iv.</div><div><h3>Tell someone your plan</h3><p>Where you&rsquo;re going, which road, when you&rsquo;ll be back. It&rsquo;s a two-minute text that makes a search actually work.</p></div></div>
+    <div class="road-rule"><div class="n">v.</div><div><h3>No cell service</h3><p>Assume zero bars past the pavement. Download maps, carry what you&rsquo;d need to spend a night, don&rsquo;t count on calling anyone.</p></div></div>
+    <div class="road-rule"><div class="n">vi.</div><div><h3>Drive like you&rsquo;re a guest</h3><p>Because you are &mdash; on an industrial road, in working forest, in Sḵwx̱wú7mesh territory. Slow through blind corners, pack out everything.</p></div></div>
+  </div>
+</section>
+
+<!-- ===================== SEASONS ===================== -->
+<section class="seasons" id="seasons">
+  <div class="col" style="max-width:860px;">
+    <div class="eyebrow"><span class="tag">When to go</span></div>
+    <h2>The valley by season.</h2>
+  </div>
+  <div class="season-table">
+    <div class="season-row">
+      <div class="when">Winter</div>
+      <p>The valley floor stays walkable &mdash; dikes and falls between storms &mdash; while the roads up go to snow. Alpine access is a different, serious sport in winter; check BC Parks and current conditions before pointing a car uphill.</p>
+    </div>
+    <div class="season-row">
+      <div class="when">Spring</div>
+      <p>Melt season. The river runs high, fast, and cold; gravel bars shrink and swimming is a hard no. The falls are at their loudest, and the low-valley bike trails dry out first.</p>
+    </div>
+    <div class="season-row">
+      <div class="when">Summer</div>
+      <p>The generous season. Late summer especially: clear channels, warm stones, swimming holes at their best behaved &mdash; still watching for weather and dam-release changes. Both roads open the alpine; expect company at Watersprite and Elfin Lakes on weekends.</p>
+    </div>
+    <div class="season-row">
+      <div class="when">Fall</div>
+      <p>The valley&rsquo;s signature act. Chum and coho run the lower river, eagle numbers build behind them, and cottonwoods go gold over the dikes. Respectful viewing from the dike tops; the fish are working.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HONEST NOTE ===================== -->
+<section class="honest">
+  <div class="col">
+    <div class="eyebrow"><span class="tag">Honest note</span></div>
+    <h2 style="margin-bottom:1.6rem;">What the brochures leave out.</h2>
+    <p>The Mamquam is not a park. It&rsquo;s a working valley &mdash; diked river, active logging roads, hydro infrastructure, a moody glacier-fed current that changes with weather and dam releases. That&rsquo;s exactly what makes it good, and exactly why it deserves more respect than a lake with a parking lot.</p>
+    <p>So: <em>swim the slack water, not the current. Stay behind the fences at the falls &mdash; the canyon edges are steep and they do not give second chances. Give logging trucks the road. Assume no cell service past the pavement, and tell someone your plan.</em> None of this is meant to scare you off; it&rsquo;s meant to make you the kind of visitor the valley doesn&rsquo;t have to rescue.</p>
+    <p>And the quiet part said plainly: this river runs through the unceded territory of the Sḵwx̱wú7mesh Úxwumixw, and its name comes from their language. Travel it like a guest who&rsquo;d be welcome back.</p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="col">
+    <div class="eyebrow"><span class="tag">Questions &amp; answers</span></div>
+    <h2>What people ask about the Mamquam.</h2>
+    <div class="faq-list">
+
+      <details class="qa"><summary><span class="m">i.</span><span>Where is Mamquam Falls, and how hard is the walk?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>The falls sit a short walk from the Powerhouse area on the lower Mamquam &mdash; a small but genuinely good waterfall in a mossy canyon that most visitors drive straight past. It&rsquo;s a short outing rather than a hike, but exact trail details change with washouts and reroutes, so check current conditions locally. The canyon edges are steep and undercut: stay behind the fences.</p></div>
+      </details>
+
+      <details class="qa"><summary><span class="m">ii.</span><span>Can you swim in the Mamquam River?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>In late summer, yes &mdash; the braided middle reach develops clear channels and swimming holes between the gravel bars, and locals use them all August. But this is glacier-fed water and levels can change with weather and dam releases, sometimes quickly. Swim the slack edges, keep kids away from the main current, and get out if the water starts rising.</p></div>
+      </details>
+
+      <details class="qa"><summary><span class="m">iii.</span><span>When do the salmon run, and when do the eagles show up?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>Chum and coho run the lower Mamquam in the fall, and eagle season follows the salmon &mdash; the birds build in numbers as the runs peak and carcasses accumulate. The dikes are the viewing platform: watch from the top, keep dogs leashed, and stay off the gravel next to spawning channels.</p></div>
+      </details>
+
+      <details class="qa"><summary><span class="m">iv.</span><span>Is the Mamquam FSR passable in a regular car?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>It depends entirely on the season and the last storm, so check current conditions before you go rather than trusting anything written down &mdash; including this. It&rsquo;s an active logging road: headlights on, yield to loaded trucks, no cell service past the pavement, and tell someone your plan.</p></div>
+      </details>
+
+      <details class="qa"><summary><span class="m">v.</span><span>How do I get to Watersprite Lake?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>Up the Mamquam FSR &mdash; the forest service road is the key to that whole corner of the east-side alpine. Road status and trailhead details shift year to year, so check conditions before committing. We keep a full companion guide at <a class="ln" href="https://waterspritelake.com/">waterspritelake.com</a>.</p></div>
+      </details>
+
+      <details class="qa"><summary><span class="m">vi.</span><span>How do I get to Elfin Lakes and Diamond Head?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>Up Mamquam Road, which climbs from the valley to the Diamond Head corner of Garibaldi Provincial Park. Day-pass rules, parking, and winter access change season to season &mdash; check BC Parks before you go. The companion guide lives at <a class="ln" href="https://elfin-lake.com/">Elfin Lakes</a>.</p></div>
+      </details>
+
+      <details class="qa"><summary><span class="m">vii.</span><span>Can you paddle the Mamquam?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>The river itself is fast, cold, wood-choked, and braided &mdash; not a casual paddle. The exception is where it ends: the estuary reach where the Mamquam joins the Squamish River is calm, protected water and one of the best easy paddles on the coast. That&rsquo;s canoe country &mdash; see the gazetteer&rsquo;s Mile 0 entry, and the full water briefing at <a class="ln" href="https://squamishestuary.ca/">squamishestuary.ca</a>.</p></div>
+      </details>
+
+      <details class="qa"><summary><span class="m">viii.</span><span>What does &ldquo;Mamquam&rdquo; mean?</span><span class="tw">+</span></summary>
+        <div class="ans"><p>The name comes from the Squamish language &mdash; the river runs through Sḵwx̱wú7mesh Úxwumixw territory and carried the name long before the town existed. Published renderings of the meaning vary, and we&rsquo;d rather not flatten it into a caption; if you want it properly, learn it from Squamish Nation sources rather than a tourism page.</p></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="colophon">
+  <div class="shell">
+    <div class="foot-cols">
+      <div>
+        <h4>This guide</h4>
+        <p>The Mamquam is Vol. II, No. 06 of the <a class="ln" href="https://seatoskytrails.com/">Sea to Sky Trails</a> &mdash; a slow-built set of field guides to the rivers, lakes, and roads of the Coast Mountains. Part of the Sea to Sky Trails.</p>
+      </div>
+      <div>
+        <h4>More field guides</h4>
+        <ul>
+          <li><a href="https://waterspritelake.com/">Watersprite Lake</a></li>
+          <li><a href="https://elfin-lake.com/">Elfin Lakes</a></li>
+          <li><a href="https://squamishestuary.ca/">Squamish Estuary</a></li>
+          <li><a href="https://lakelovelywater.com/">Lake Lovely Water</a></li>
+          <li><a href="https://alicelakesquamish.com/">Alice Lake</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>On the water</h4>
+        <ul>
+          <li><a href="https://squamishcanoerental.com/">Squamish Canoe Rental</a></li>
+          <li><a href="https://squamishwatertaxi.com/tours.html">Howe Sound boat tours</a></li>
+          <li><a href="https://seatoskytrails.com/water-sports/">The corridor on the water</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <div>Published in the territory of the Sḵwx̱wú7mesh Úxwumixw (Squamish Nation).</div>
+      <div><em>Sea to Sky Trails</em> &middot; Vol. II, No. 06 &middot; <a class="ln" href="https://seatoskytrails.com/">seatoskytrails.com</a></div>
+      <div>Set in Fraunces &amp; Inter. Reader-funded.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== STRUCTURED DATA ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "The Mamquam River Valley",
+  "description": "Squamish's working river valley: the braided, glacier-fed Mamquam River, Mamquam Falls near the Powerhouse area, fall chum and coho salmon runs with eagle viewing from the dikes, and the gravel roads (Mamquam FSR and Mamquam Road) that access Watersprite Lake and Elfin Lakes.",
+  "url": "https://mamquam.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Squamish",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.7, "longitude": -123.1 },
+  "isAccessibleForFree": true,
+  "touristType": ["Hikers", "Families", "Wildlife watchers", "Mountain bikers"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Where is Mamquam Falls, and how hard is the walk?", "acceptedAnswer": { "@type": "Answer", "text": "The falls sit a short walk from the Powerhouse area on the lower Mamquam — a small but genuinely good waterfall in a mossy canyon that most visitors drive past. It is a short outing rather than a hike, but exact trail details change with washouts, so check current conditions locally. The canyon edges are steep and undercut: stay behind the fences." } },
+    { "@type": "Question", "name": "Can you swim in the Mamquam River?", "acceptedAnswer": { "@type": "Answer", "text": "In late summer, yes — the braided middle reach develops clear channels and swimming holes between the gravel bars. But this is glacier-fed water and levels can change with weather and dam releases, sometimes quickly. Swim the slack edges, keep kids away from the main current, and get out if the water starts rising." } },
+    { "@type": "Question", "name": "When do the salmon run on the Mamquam, and when do the eagles show up?", "acceptedAnswer": { "@type": "Answer", "text": "Chum and coho run the lower Mamquam in the fall, and eagle season follows the salmon as the runs peak. The dikes are the viewing platform: watch from the top, keep dogs leashed, and stay off the gravel next to spawning channels." } },
+    { "@type": "Question", "name": "Is the Mamquam FSR passable in a regular car?", "acceptedAnswer": { "@type": "Answer", "text": "It depends entirely on the season and the last storm, so check current road conditions before you go. It is an active logging road: headlights on, yield to loaded trucks, no cell service past the pavement, and tell someone your plan." } },
+    { "@type": "Question", "name": "How do I get to Watersprite Lake?", "acceptedAnswer": { "@type": "Answer", "text": "Up the Mamquam Forest Service Road — the FSR is the key to that corner of the east-side alpine. Road status and trailhead details shift year to year, so check conditions before committing. A full companion guide lives at waterspritelake.com." } },
+    { "@type": "Question", "name": "How do I get to Elfin Lakes and Diamond Head?", "acceptedAnswer": { "@type": "Answer", "text": "Up Mamquam Road, which climbs from the valley to the Diamond Head corner of Garibaldi Provincial Park. Day-pass rules, parking, and winter access change season to season — check BC Parks before you go. A companion guide lives at elfin-lake.com." } },
+    { "@type": "Question", "name": "Can you paddle the Mamquam River?", "acceptedAnswer": { "@type": "Answer", "text": "The river itself is fast, cold, and wood-choked — not a casual paddle. The exception is where it ends: the estuary reach where the Mamquam joins the Squamish River is calm, protected water and one of the best easy paddles on the coast. Canoes are available locally and take up to three paddlers." } },
+    { "@type": "Question", "name": "What does Mamquam mean?", "acceptedAnswer": { "@type": "Answer", "text": "The name comes from the Squamish language — the river runs through Sḵwx̱wú7mesh Úxwumixw (Squamish Nation) territory and carried the name long before the town existed. Published renderings of the meaning vary; learn it properly from Squamish Nation sources." } }
+  ]
+}
+</script>
+
+</body>
+</html>
